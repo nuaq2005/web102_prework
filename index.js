@@ -51,7 +51,7 @@ function addGamesToPage(games) {
         // between the end of the src attribute and the end of the tag ("/>")
         // append the game to the games-container
 
-        gamesContainer.appendChild(gameCard);
+        games-container.appendChild(gameCard);
     }
 
 }
