@@ -39,20 +39,16 @@ function addGamesToPage(games) {
 
         // set the inner HTML using a template literal to display some info 
         // about each game
-        const displayInfo = 
-            <div>
+        gameCard.innerHTML = 
+        <div>
             <h1>${games.name}</h1>
             <p> ${games.description} </p>
             <p> Pledged: ${games.pledged} </p>
-            <img src= "games.img" alt ="" />
+            <img src= "games.img" alt ="game image" />
         </div>
-        
         
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
-
-        gameCard.innerHTML = displayInfo;
-
         // append the game to the games-container
 
         gamesContainer.appendChild(gameCard);
@@ -64,7 +60,6 @@ function addGamesToPage(games) {
 // later, we'll call this function using a different list of games
 
 addGamesToPage(GAMES_JSON);
-
 
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
