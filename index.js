@@ -23,35 +23,34 @@ function deleteChildElements(parent) {
 */
 
 // grab the element with the id games-container
-const gamesContainer = document.getElementById('games-container');
+const gamesContainer = document.getElementById("games-container");
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
 
     // loop over each item in the data
     for (let i = 0; i < games.length; i++){
-
+        const game = games[i];
         // create a new div element, which will become the game card
-        const gameCard = document.createElement('div');
+        const gameCard = document.createElement("div");
         
         // add the class game-card to the list
-        gameCard.classList.add('game-card');
+        gameCard.classList.add("game-card");
 
         // set the inner HTML using a template literal to display some info 
         // about each game
-        gameCard.innerHTML = 
-        <div>
-            <h1>${games.name}</h1>
-            <p> ${games.description} </p>
-            <p> Pledged: ${games.pledged} </p>
-            <img src= "games.img" alt ="game image" />
-        </div>
+        gameCard.innerHTML = `
+         <h1>${game.name}</h1>
+         <img src= "${game.img}" class= "game-img"  alt ="${game.name}" />
+        <p> ${game.description} </p>
+        <p> Pledged: ${game.pledged} </p>
+        `;
         
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
         // append the game to the games-container
 
-        games-container.appendChild(gameCard);
+        document.getElementById("games-container").appendChild(gameCard);
     }
 
 }
